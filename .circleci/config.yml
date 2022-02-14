@@ -1,0 +1,34 @@
+version: 2.1
+
+
+orbs:
+  python: circleci/python@2.0.1
+
+
+jobs:
+  roda-testes:
+
+    machine:
+      image: ubuntu-2004:202111-02
+    resource_class: medium
+    steps:
+      - checkout
+      - run: pyenv global 3.9.7
+      - run: ln -s /opt/circleci/.pyenv ~/
+      - python/install-packages:
+          pkg-manager: pip
+
+      - run:
+          name: Run tests
+          working_directory: 2-predicao-de-sexo
+          command: pytest --junitxml=test-results/junit.xml 
+      - store_test_results:
+          path: 2-predicao-de-sexo/test-results
+      - store_artifacts:
+          path: 2-predicao-de-sexo/test-results
+
+
+workflows:
+  testes-aula-usp:
+    jobs:
+      - roda-testes

@@ -1,0 +1,2 @@
+miniwdl==1.4.3
+pytest-workflow==1.6.0
