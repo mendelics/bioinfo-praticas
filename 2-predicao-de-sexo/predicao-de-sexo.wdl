@@ -31,6 +31,11 @@ workflow SexPrediction {
             bam_files=GatherBAMRegions.alignments,
             bam_files_idx=GatherBAMRegions.alignments_idx,
     }
+
+    output {
+        File chrX_predictions = CountVariants.predictions
+        File sry_predictions = CalculateCoverages.predictions
+    }
 }
 
 
@@ -71,7 +76,7 @@ task CountVariants {
     }
 
     output {
-
+        File predictions = "output.tsv"
     }
 }
 
@@ -114,7 +119,7 @@ task CalculateCoverages {
     }
 
     output {
-
+        File predictions = "sry-predictons.tsv"
     }
 }
 
