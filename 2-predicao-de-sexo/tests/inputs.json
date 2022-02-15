@@ -1,0 +1,30 @@
+{
+  "SexPrediction.bam_files": [
+    "tests/data/bams/CXT070-001.sry.bam",
+    "tests/data/bams/KAB133-001.sry.bam",
+    "tests/data/bams/NQB080-001.sry.bam",
+    "tests/data/bams/OZX502-001.sry.bam",
+    "tests/data/bams/UQE098-001.sry.bam"
+  ],
+  "SexPrediction.bam_files_idx": [
+    "tests/data/bams/CXT070-001.sry.bam.bai",
+    "tests/data/bams/KAB133-001.sry.bam.bai",
+    "tests/data/bams/NQB080-001.sry.bam.bai",
+    "tests/data/bams/OZX502-001.sry.bam.bai",
+    "tests/data/bams/UQE098-001.sry.bam.bai"
+  ],
+  "SexPrediction.vcf_files": [
+    "tests/data/vcfs/CXT070-001.vcf.gz",
+    "tests/data/vcfs/KAB133-001.vcf.gz",
+    "tests/data/vcfs/NQB080-001.vcf.gz",
+    "tests/data/vcfs/OZX502-001.vcf.gz",
+    "tests/data/vcfs/UQE098-001.vcf.gz"
+  ],
+  "SexPrediction.vcf_files_idx": [
+    "tests/data/vcfs/CXT070-001.vcf.gz.tbi",
+    "tests/data/vcfs/KAB133-001.vcf.gz.tbi",
+    "tests/data/vcfs/NQB080-001.vcf.gz.tbi",
+    "tests/data/vcfs/OZX502-001.vcf.gz.tbi",
+    "tests/data/vcfs/UQE098-001.vcf.gz.tbi"
+  ]
+}
