@@ -1,12 +1,10 @@
 - name: Teste do workflow para detecção de covid
   command: miniwdl run -i tests/inputs.json detectar-covid.wdl
   files:
-    - path: "_LAST/out/covid_presence"
+    - path: "_LAST/outputs.json"
       contains:
-        - "true"
-    - path: "_LAST/out/coverage"
-      contains:
-        - "0.388"
+        - '.coverage": 0.388'
+        - '.covid_presence": true'
     - path: "_LAST/out/consensus_fasta/artic_result.consensus.fasta"
       md5sum: 40ee1a0185e194efb658438920389a04
 
