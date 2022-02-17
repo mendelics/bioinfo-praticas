@@ -6,7 +6,7 @@ orbs:
 
 
 jobs:
-  roda-testes:
+  predicao-de-sexo:
 
     machine:
       image: ubuntu-2004:202111-02
@@ -20,15 +20,36 @@ jobs:
 
       - run:
           name: Run tests
-          working_directory: 2-predicao-de-sexo
+          working_directory: predicao-de-sexo
           command: pytest --junitxml=test-results/junit.xml 
       - store_test_results:
-          path: 2-predicao-de-sexo/test-results
+          path: predicao-de-sexo/test-results
       - store_artifacts:
-          path: 2-predicao-de-sexo/test-results
+          path: predicao-de-sexo/test-results
+
+  deteccao-sars-cov-2:
+    machine:
+      image: ubuntu-2004:202111-02
+    resource_class: medium
+    steps:
+      - checkout
+      - run: pyenv global 3.9.7
+      - run: ln -s /opt/circleci/.pyenv ~/
+      - python/install-packages:
+          pkg-manager: pip
+
+      - run:
+          name: Run tests deteccao-sars-cov-2
+          working_directory: deteccao-sars-cov-2
+          command: pytest --junitxml=test-results/junit.xml 
+      - store_test_results:
+          path: deteccao-sars-cov-2/test-results
+      - store_artifacts:
+          path: deteccao-sars-cov-2/test-results
 
 
-workflows:
-  testes-aula-usp:
-    jobs:
-      - roda-testes
+# workflows:
+#   testes-de-workflows:
+#     jobs:
+#       - predicao-de-sexo
+#       - deteccao-sars-cov-2

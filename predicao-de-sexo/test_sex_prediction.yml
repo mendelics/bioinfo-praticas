@@ -1,0 +1,37 @@
+- name: Teste do workflow para predição de sexo.
+  command: miniwdl run -i tests/inputs.json predicao-de-sexo.wdl
+  files:
+    - path: "_LAST/out/predictions/stdout.txt"
+      contains:
+        - "CXT070-001.sry\tmale"
+        - "KAB133-001.sry\tmale"
+        - "NQB080-001.sry\tmale"
+        - "OZX502-001.sry\tfemale"
+        - "UQE098-001.sry\tfemale"
+        - "CXT070-001\tmale"
+        - "KAB133-001\tmale"
+        - "NQB080-001\tmale"
+        - "OZX502-001\tfemale"
+        - "UQE098-001\tfemale"
+
+- name: Teste da tarefa CountVariants. Conta het. e hom. no cromossomo X da amostra.
+  command: miniwdl run --task CountVariants -i tests/count-variants.inputs.json predicao-de-sexo.wdl
+  files:
+    - path: "_LAST/out/counts/counts.tsv"
+      contains:
+        - "CXT070-001\t41\t554"
+        - "KAB133-001\t35\t446"
+        - "NQB080-001\t43\t546"
+        - "OZX502-001\t220\t315"
+        - "UQE098-001\t367\t382"
+
+- name: Teste da tarefa CalculateCoverages. Verifica a cobertura na região SRY do cromossomo Y.
+  command: miniwdl run --task CalculateCoverages -i tests/calculate-coverage.inputs.json predicao-de-sexo.wdl
+  files:
+    - path: "_LAST/out/coverages/coverages.txt"
+      contains:
+        - "CXT070-001.sry\tchrY\t2786854\t2787741\tSRY\t821\t739\t716\t688"
+        - "KAB133-001.sry\tchrY\t2786854\t2787741\tSRY\t803\t724\t697\t677"
+        - "NQB080-001.sry\tchrY\t2786854\t2787741\tSRY\t747\t709\t678\t649"
+        - "OZX502-001.sry\tchrY\t2786854\t2787741\tSRY\t0\t0\t0\t0"
+        - "UQE098-001.sry\tchrY\t2786854\t2787741\tSRY\t0\t0\t0\t0"

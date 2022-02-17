@@ -1,0 +1,10 @@
+{
+  "DetectCovid.fastqs": [
+    "tests/data/fastqs/subsampled_1.fastq.gz",
+    "tests/data/fastqs/subsampled_2.fastq.gz",
+    "tests/data/fastqs/subsampled_3.fastq.gz",
+    "tests/data/fastqs/subsampled_4.fastq.gz"
+  ],
+  "DetectCovid.primer_schemes_compressed": "tests/data/primer_schemes/primer_schemes.tar.gz",
+  "DetectCovid.scheme": "SARS-CoV-2/V3"
+}

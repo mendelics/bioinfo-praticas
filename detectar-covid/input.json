@@ -1,7 +1,0 @@
-{
-    "DetectCovid.fastqs" : [
-        "gs://nanopore-runs-934436/20220210_Genoma_SarsCov2_Run113/20220210_1452_MC-112215_FAR96297_5f4bdd43/fastq_pass/barcode32/FAR96297_pass_barcode32_0885695d_0.fastq.gz",
-        "gs://nanopore-runs-934436/20220210_Genoma_SarsCov2_Run113/20220210_1452_MC-112215_FAR96297_5f4bdd43/fastq_pass/barcode32/FAR96297_pass_barcode32_0885695d_1.fastq.gz"
-    ],
-    "DetectCovid.primer_schemes_compressed" : "gs://bioinfo-dev-temp/usp-workshop/primer_schemes_SARS-CoV-2_V3.tar.gz"
-}
