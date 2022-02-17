@@ -34,12 +34,20 @@ conda install -c bioconda bcftools
 docker run -it --rm -v $(pwd):/work -w /work quay.io/biocontainers/bcftools:1.14--hde04aa1_1 bash
 ```
 
+No workflow desta prática ele é usado [aqui](https://github.com/lmtani/agua-triste/blob/4fe26e34ad364cb36da36eb910ff3b58416a6886/2-predicao-de-sexo/predicao-de-sexo.wdl#L67-L68).
+
 ### CalculateCoverages
 
 Utiliza a ferramenta _mosdepth_ para verificar a cobertura horizontal sobre a região SRY do cromossomo Y. 
 
 Esta ferramenta também está disponivel para instalação via conda ou pelo próprio [repositório oficial](https://github.com/brentp/mosdepth), basta baixar o binário para o caso de usar linux.
 
+No workflow desta prática ele é usado [aqui](https://github.com/lmtani/agua-triste/blob/main/2-predicao-de-sexo/predicao-de-sexo.wdl#L105).
+
 ### ClassifySex
 
-Carrega os valores calculados nas etapas anteriores para classificar cada uma das amostras como de origem masculina ou feminina. Usamos um pequeno script com Python aqui.
+Carrega os valores calculados nas etapas anteriores para classificar cada uma das amostras como de origem masculina ou feminina. Usamos um pequeno script com Python [aqui](https://github.com/lmtani/agua-triste/blob/main/2-predicao-de-sexo/predicao-de-sexo.wdl#L137-L164).
+
+É bastante incoveniente trabalhar com script embutido em arquivos WDL pois perdemos todo auxilio que IDEs (como pycharm ou vscode) oferecem. Muitas vezes costumo começar em um arquivo .py e depois apenas copiar para o WDL.
+
+Neste quesito o [Nextflow](https://www.nextflow.io/) é mais conveniente, pois podemos deixar os scripts em um diretório `bin/` no repositório e chama-los diretamente, como [este exemplo](https://github.com/epi2me-labs/wf-artic/tree/master/bin) com um workflow para análise de linhagens de sars-cov-2 usando sequenciamento Nanopore.
