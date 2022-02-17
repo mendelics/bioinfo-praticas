@@ -1,0 +1,4 @@
+{
+    "fasta" : "tests/data/consensus_fasta/artic_result.consensus.fasta",
+    "coverage_threshold" : 0.1
+}

@@ -45,7 +45,7 @@ task ArticGuppyplex {
         mkdir fastqs
         # A sintaxe ~{sep=" " fastqs} é de WDL, ela expande o array
         # em uma string separada por espaço. Ex: "item1 item2 item3"
-        mv ~{sep=" " fastqs} fastqs/
+        cp ~{sep=" " fastqs} fastqs/
 
         # Como utilizamos apenas os arquivos "pass" do MinION, podemos pular
         # a etapa de quality-check, conforme descrito no protocolo do Artic
@@ -76,7 +76,7 @@ task ArticMinion {
         File fastq
         File primer_schemes_compressed
         String scheme
-        Int normalise = 100
+        Int normalise = 200
     }
 
     command <<<
@@ -124,12 +124,12 @@ task GetCoverage {
         number_of_ns = sequence.count("N")
         sequence_length = len(sequence)
         n_percentage = number_of_ns / sequence_length
-        rounded_n_percentage = round(n_percentage, 3)
         coverage = 1 - n_percentage
+        round_coverage = round(coverage, 3)
         with open("coverage.float", "w") as out:
-            out.write(f"{coverage}")
+            out.write(f"{round_coverage}")
 
-        if coverage >= ~{coverage_threshold}:
+        if round_coverage >= ~{coverage_threshold}:
             covid_presence = True
         else:
             covid_presence = False
