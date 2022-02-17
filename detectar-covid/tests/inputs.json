@@ -1,7 +1,9 @@
 {
   "DetectCovid.fastqs": [
-    "tests/data/fastqs/FAR96297_pass_barcode32_0885695d_0.fastq.gz",
-    "tests/data/fastqs/FAR96297_pass_barcode32_0885695d_1.fastq.gz"
+    "tests/data/fastqs/subsampled_1.fastq.gz",
+    "tests/data/fastqs/subsampled_2.fastq.gz",
+    "tests/data/fastqs/subsampled_3.fastq.gz",
+    "tests/data/fastqs/subsampled_4.fastq.gz"
   ],
   "DetectCovid.primer_schemes_compressed": "tests/data/primer_schemes/primer_schemes.tar.gz"
 }
