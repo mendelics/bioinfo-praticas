@@ -1,0 +1,6 @@
+{
+    "fastq" : "tests/data/fastqs/guppyplexed.fastq.gz",
+    "primer_schemes_compressed" : "tests/data/primer_schemes/primer_schemes.tar.gz",
+    "scheme" : "SARS-CoV-2/V3",
+    "normalise" : 200
+}

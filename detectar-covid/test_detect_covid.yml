@@ -6,21 +6,26 @@
         - "true"
     - path: "_LAST/out/coverage/coverage.float"
       contains:
-        - "0.310"
+        - "0.388"
 
 - name: Teste da tarefa ArticGuppyplex. Checa se o FASTQ gerado bate com o esperado.
-  command: miniwdl run --task ArticGuppyplex -i tests/guppylex.inputs.json detectar-covid.wdl
+  command: miniwdl run --task ArticGuppyplex -i tests/guppyplex.inputs.json detectar-covid.wdl
   files:
     - path: "_LAST/out/fastq/guppyplexed.fastq.gz"
-      md5sum: aaa
+      md5sum: 6554432a6328d7c86f2435ee9ca5fc78
 
-- name: Teste da tarefa CalculateCoverages. Verifica a cobertura na região SRY do cromossomo Y.
-  command: miniwdl run --task CalculateCoverages -i tests/calculate-coverage.inputs.json predicao-de-sexo.wdl
+- name: Teste da tarefa ArticMinion. Checa se o consensus.FASTA gerado bate com o esperado.
+  command: miniwdl run --task ArticMinion -i tests/minion.inputs.json detectar-covid.wdl
   files:
-    - path: "_LAST/out/coverages/coverages.txt"
+    - path: "_LAST/out/consensus_fasta/artic_result.consensus.fasta"
+      md5sum: 40ee1a0185e194efb658438920389a04
+
+- name: Teste da tarefa GetCoverage. Checa se o consensus.FASTA gerado bate com o esperado.
+  command: miniwdl run --task GetCoverage -i tests/getcoverage.inputs.json detectar-covid.wdl
+  files:
+    - path: "_LAST/out/coverage/coverage.float"
       contains:
-        - "CXT070-001.sry\tchrY\t2786854\t2787741\tSRY\t821\t739\t716\t688"
-        - "KAB133-001.sry\tchrY\t2786854\t2787741\tSRY\t803\t724\t697\t677"
-        - "NQB080-001.sry\tchrY\t2786854\t2787741\tSRY\t747\t709\t678\t649"
-        - "OZX502-001.sry\tchrY\t2786854\t2787741\tSRY\t0\t0\t0\t0"
-        - "UQE098-001.sry\tchrY\t2786854\t2787741\tSRY\t0\t0\t0\t0"
+        - "0.310"
+    - path: "_LAST/out/covid_presence/covid_presence.boolean"
+      contains:
+        - "true"

@@ -19,13 +19,22 @@ jobs:
           pkg-manager: pip
 
       - run:
-          name: Run tests
+          name: Run tests predicao-de-sexo
           working_directory: 2-predicao-de-sexo
           command: pytest --junitxml=test-results/junit.xml 
       - store_test_results:
           path: 2-predicao-de-sexo/test-results
       - store_artifacts:
           path: 2-predicao-de-sexo/test-results
+
+      - run:
+          name: Run tests detectar-covid
+          working_directory: detectar-covid
+          command: pytest --junitxml=test-results/junit.xml 
+      - store_test_results:
+          path: detectar-covid/test-results
+      - store_artifacts:
+          path: detectar-covid/test-results
 
 
 workflows:
