@@ -1,14 +1,14 @@
 # Detecção de Covid
 
 
-## Descrição
+## 📚 Descrição
 
 Neste workflow temos como objetivo detectar amostras positivas para covid usando o [pipeline Artic](https://github.com/artic-network/fieldbioinformatics/), conforme [o protocolo do Artic para sequenciamento do coronavírus](https://artic.network/ncov-2019/ncov2019-bioinformatics-sop.html).
 
 O workflow foi feito para analisar arquivos FASTQ obtidos de sequenciadores Nanopore MinION, utilizando o protocolo de laboratório do Artic, sequenciando amplicons de coronavírus.
 
 
-## Etapas
+## 🧰 Etapas
 
 ArticGuppyplex: filtra as reads para unir os arquivos fastq e remover sequências pequenas ou longas demais. Como utilizamos apenas o arquivo "pass" do MinION, que já filtra por qualidade, podemos pular a etapa de quality-check.
 
