@@ -1,12 +1,14 @@
 - name: Teste do workflow para detecção de covid
   command: miniwdl run -i tests/inputs.json detectar-covid.wdl
   files:
-    - path: "_LAST/out/covid_presence/covid_presence.boolean"
+    - path: "_LAST/out/covid_presence"
       contains:
         - "true"
-    - path: "_LAST/out/coverage/coverage.float"
+    - path: "_LAST/out/coverage"
       contains:
         - "0.388"
+    - path: "_LAST/out/consensus_fasta/artic_result.consensus.fasta"
+      md5sum: 40ee1a0185e194efb658438920389a04
 
 - name: Teste da tarefa ArticGuppyplex. Checa se o FASTQ gerado bate com o esperado.
   command: miniwdl run --task ArticGuppyplex -i tests/guppyplex.inputs.json detectar-covid.wdl
@@ -23,9 +25,9 @@
 - name: Teste da tarefa GetCoverage. Checa se o consensus.FASTA gerado bate com o esperado.
   command: miniwdl run --task GetCoverage -i tests/getcoverage.inputs.json detectar-covid.wdl
   files:
-    - path: "_LAST/out/coverage/coverage.float"
+    - path: "_LAST/out/coverage"
       contains:
         - "0.310"
-    - path: "_LAST/out/covid_presence/covid_presence.boolean"
+    - path: "_LAST/out/covid_presence"
       contains:
         - "true"
