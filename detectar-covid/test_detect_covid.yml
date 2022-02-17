@@ -9,10 +9,11 @@
       md5sum: 40ee1a0185e194efb658438920389a04
 
 - name: Teste da tarefa ArticGuppyplex. Checa se o FASTQ gerado bate com o esperado.
-  command: miniwdl run --task ArticGuppyplex -i tests/guppyplex.inputs.json detectar-covid.wdl
+  command: miniwdl run --task ArticGuppyplex -i tests/guppyplex.inputs.json detectar-covid.wdl ; \
+           cat _LAST/out/fastq/guppyplexed.fastq.gz | gunzip | sort > _LAST/out/fastq/guppyplexed.sorted
   files:
-    - path: "_LAST/out/fastq/guppyplexed.fastq.gz"
-      md5sum: 6554432a6328d7c86f2435ee9ca5fc78
+    - path: "_LAST/out/fastq/guppyplexed.sorted"
+      md5sum: 978909b0be89786a422208189b0dce4e
 
 - name: Teste da tarefa ArticMinion. Checa se o consensus.FASTA gerado bate com o esperado.
   command: miniwdl run --task ArticMinion -i tests/minion.inputs.json detectar-covid.wdl
