@@ -32,7 +32,11 @@ Existe um botão escrito "_fork_" na parte superior direita desta tela. Você pr
 
 ### Organização do workflow
 
-Optamos por usar a linguagem WDL ([pronunciada widdle](https://support.terra.bio/hc/en-us/articles/360037117492-Overview-Getting-started-with-WDL).
+Optamos por usar a linguagem WDL ([pronunciada widdle](https://support.terra.bio/hc/en-us/articles/360037117492-Overview-Getting-started-with-WDL). Para processos simples ou operações apenas exploratórias pode ser questionável a adoção de uma linguagem para organizar workflows, pois adiciona complexidade. No entanto a complexidade se paga quando temos uma linha de produção, como na Mendelics onde centenas de exomas são processados semanalmente, pois:
+
+- As etapas ficam bem definidas, podendo ser reaproveitadas. Muitas vezes podemos até mesmo usar algumas das disponibilizadas pelo [Broad Institute via projeto WARP](https://broadinstitute.github.io/warp/).
+
+- Temos controle fácil dos recursos computacionais de infraestrutura. Pode-se configurar para usar HPC, Google Cloud, AWS, alibaba cloud, etc. Dessa forma, para etapas leves podemos reservar poucos recursos, enquanto que para as mais pesadas podemos fazer o oposto.
 
 ### Testes automáticos
 
