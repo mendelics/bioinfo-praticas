@@ -23,9 +23,7 @@
 - name: Teste da tarefa GetCoverage. Checa se o consensus.FASTA gerado bate com o esperado.
   command: miniwdl run --task GetCoverage -i tests/getcoverage.inputs.json detectar-covid.wdl
   files:
-    - path: "_LAST/out/coverage"
+    - path: "_LAST/outputs.json"
       contains:
-        - "0.310"
-    - path: "_LAST/out/covid_presence"
-      contains:
-        - "true"
+        - '.coverage": 0.388'
+        - '.covid_presence": true'
