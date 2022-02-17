@@ -32,7 +32,7 @@ Existe um botão escrito "_fork_" na parte superior direita desta tela. Você pr
 
 ### Organização do workflow
 
-Optamos por usar a linguagem WDL ([pronunciada widdle](https://support.terra.bio/hc/en-us/articles/360037117492-Overview-Getting-started-with-WDL#:~:text=The%20Workflow%20Description%20Language%20(WDL,language%20for%20data%20processing%20workflows.)).
+Optamos por usar a linguagem WDL ([pronunciada widdle](https://support.terra.bio/hc/en-us/articles/360037117492-Overview-Getting-started-with-WDL).
 
 ### Testes automáticos
 
