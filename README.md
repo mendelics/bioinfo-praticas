@@ -29,5 +29,19 @@ Github é esta plataforma onde você está lendo este texto. Dedique um tempo em
 
 Existe um botão escrito "_fork_" na parte superior direita desta tela. Você precisará clicar nele para copiar este repositório para sua conta, e assim realizar as alterações necessárias para posteriormente volta-las para cá, ou mesmo evolui-las em paralelo em um repositório controlado por você.
 
+
+### Organização do workflow
+
+Optamos por usar a linguagem WDL ([pronunciada widdle](https://support.terra.bio/hc/en-us/articles/360037117492-Overview-Getting-started-with-WDL#:~:text=The%20Workflow%20Description%20Language%20(WDL,language%20for%20data%20processing%20workflows.)).
+
 ### Testes automáticos
+
+Quando interagimos com o computador sempre realizamos testes em um nivel ou em outro. Por exemplo: alguém desenvolvendo um programa para montagem de genomas certamente irá separar uma coleção mínima de dados para testar periódicamente o código em que está trabalhando. Por que devemos ativamente rodar esses testes? Não seria melhor que os testes rodassem sempre que uma alteração fosse submetida à sua base de código? Esse é o intuito dos testes automáticos. 
+
+Vale a pena dedicarmos um tempo elaborando testes automáticos para as principais funcionalidades de nossos programas (ou sistemas), pois dessa forma temos segurança ao fazermos mudanças. Existem diversas maneiras de preparar tais testes. Nesta prática usamos a biblioteca [pytest-workflow](https://pytest-workflow.readthedocs.io/en/stable/) para verificar as diferentes etapas de nosso pipeline.
+
+[Neste arquivo](https://github.com/lmtani/agua-triste/blob/8f0a061b24b8e2d7d3eb563e009c43f336c7aa44/2-predicao-de-sexo/test_sex_prediction.yml) temos todos os testes que desejamos. Eles são executados automáticamente sempre que algo é alterado neste repositório, graças ao CircleCI.
+
+### Integração continua
+
 
