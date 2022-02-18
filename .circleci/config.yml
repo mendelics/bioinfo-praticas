@@ -14,10 +14,13 @@ commands:
           name: Prepare miniwdl artifacts
           command: |
             mkdir ~/workdir
-            for i in ~/pytest-workdir/*/_LAST/*.txt ~/pytest-workdir/*/_LAST/*.log ~/pytest-workdir/*/_LAST/command; do 
-              directory=$(echo $i | cut -d "/" -f 5);
-              mkdir -p ~/workdir/$directory; 
-              cp $i ~/workdir/$directory; 
+            for i in ~/pytest-workdir/*/_LAST/*.txt ~/pytest-workdir/*/_LAST/*.log ~/pytest-workdir/*/_LAST/command ~/pytest-workdir/*/log.err;  do
+              directory="$(echo $i | cut -d "/" -f 5)";
+              if [[ "${directory}" != "*" ]] ;
+              then
+                mkdir -p ~/workdir/$directory;
+                cp $i ~/workdir/$directory;
+              fi
             done
 
 
