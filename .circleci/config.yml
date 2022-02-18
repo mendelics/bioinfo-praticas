@@ -7,7 +7,6 @@ orbs:
 
 jobs:
   predicao-de-sexo:
-
     machine:
       image: ubuntu-2004:202111-02
     resource_class: medium
@@ -47,9 +46,29 @@ jobs:
       - store_artifacts:
           path: deteccao-sars-cov-2/test-results
 
+  deteccao-linhagem-covid:
+    machine:
+      image: ubuntu-2004:202111-02
+    resource_class: medium
+    steps:
+      - checkout
+      - run: pyenv global 3.9.7
+      - run: ln -s /opt/circleci/.pyenv ~/
+      - python/install-packages:
+          pkg-manager: pip
+
+      - run:
+          name: Run tests deteccao-linhagem-covid
+          working_directory: deteccao-linhagem-covid
+          command: pytest --junitxml=test-results/junit.xml 
+      - store_test_results:
+          path: deteccao-linhagem-covid/test-results
+      - store_artifacts:
+          path: deteccao-linhagem-covid/test-results
 
 workflows:
   testes-de-workflows:
     jobs:
       - predicao-de-sexo
       - deteccao-sars-cov-2
+      - deteccao-linhagem-covid
