@@ -8,7 +8,7 @@ workflow DetectLineage {
 
     call Pangolin {
         input:
-            consensus_fasta=consensus_fasta
+            fasta=consensus_fasta
     }
 
     output {
@@ -29,7 +29,7 @@ task Pangolin {
         pangolin -v > pangolin_version.txt
         pangolin -pv > pangoLEARN_version.txt
 
-        pangolin \
+        pangolin
             ~{fasta} \
             --outfile pangolin.lineage.csv
     >>>
