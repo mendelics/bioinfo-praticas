@@ -41,7 +41,7 @@ Optamos por usar a linguagem WDL ([pronunciada widdle](https://support.terra.bio
 
 ### 🔧 Github
 
-Github é esta plataforma onde você está lendo este texto. Dedique um tempo em se familiarizar com ela. Note que logo abaixo do nome do repositório existem algumas abas com "code", "issues", "pull requests", etc. Esses são alguns dos conteúdos disponíveis na plataforma.
+Github é esta plataforma onde você está lendo este texto. Dedique um tempo em se familiarizar com ela. Repositório é o local em que se encontram todos os arquivos referentes a um projeto dentro do Github para uma conta. Como por exemplo, aqui o repositório é bioinfo-praticas, dentro da conta mendelics. Note que logo abaixo do nome do repositório existem algumas abas com "code", "issues", "pull requests", etc. Esses são alguns dos conteúdos disponíveis na plataforma.
 
 ![image](https://user-images.githubusercontent.com/12699242/154550821-7584f54e-69d1-432e-bcf0-31516087eb36.png)
 
@@ -66,7 +66,7 @@ Vale a pena dedicarmos um tempo elaborando testes automáticos para as principai
 
 ### 🔧 Integração contínua
 
-É relativamente comum que novas versões de software sejam manualmente disponibilizadas após uma série de mudanças feitas pelos desenvolvedores, que podem ser reorganizações de código ou novos recursos. O processo de integração contínua é um sistema onde uma vez que a mudança para o software é proposta ela será avaliada por uma série de testes automáticos, como os desta prática, pode ser revisada por um colega humano e, se tudo for aprovado, entrará em sua linha de produção automaticamente.
+É relativamente comum que novas versões de software sejam manualmente disponibilizadas após uma série de mudanças feitas pelos desenvolvedores, que podem ser reorganizações de código ou novos recursos. O processo de integração contínua é um sistema onde uma vez que a mudança para o software é proposta ela será avaliada por uma série de testes automáticos, como os desta prática, pode ser revisada por um colega humano e, se tudo for aprovado, entrará em sua linha de produção. Em suma, a integração automática permite que os testes rodem automaticamente a cada processo de revisão de mudança no software para garantir que não haja erro em nenhum processo importante.
 
 Usamos o CircleCI, que oferece uma cota gratuita para projetos publicos. [Neste link](colocar link) você pode conferir a interface que a plataforma oferece. Existem outros que também são bons, como o [Travis](https://www.travis-ci.com/).
 

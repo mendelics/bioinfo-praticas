@@ -7,16 +7,22 @@ Neste workflow temos como objetivo detectar amostras positivas para covid usando
 
 O workflow foi feito para analisar arquivos FASTQ obtidos de sequenciadores Nanopore MinION, utilizando o protocolo de laboratório do Artic, sequenciando amplicons de coronavírus.
 
+Note que, como os testes são feitos com um downsample de um sequenciamento real (para diminuir o tempo dos testes), o genoma consenso não será completamente coberto.
+
 
 ## 🧰 Etapas
 
-### 🧪 ArticGuppyplex
+### 🧪 Artic
 
-Filtra as reads para unir os arquivos fastq e remover sequências pequenas ou longas demais. Como utilizamos apenas o arquivo "pass" do MinION, que já filtra por qualidade, podemos pular a etapa de quality-check.
+O pipeline Artic pode ser rodado em [Docker](https://quay.io/biocontainers/artic:1.2.1--py) ou instalado localmente seguindo as instruções do repositório oficial. Dê preferência às instruções de instalação ["via source"](https://quay.io/repository/biocontainers/artic?tag=1.2.1--py_0&tab=tags), visto que o ambiente `conda` pode falhar.
 
-### 🧪 ArticMinion
+#### 🧪 ArticGuppyplex
 
-Alinha as reads contra o genoma referência de SARS-CoV-2, baseando-se no esquema de primers usado para o sequenciamento do vírus por amplicons. As reads são alinhadas de acordo com os amplicons esperados, e o pipeline do Artic corrige erros das mesmas, gerando uma sequência FASTA consenso.
+Filtra as reads para unir os arquivos fastq e remover sequências pequenas ou longas demais. Como utilizamos apenas o arquivo "pass" do MinION, que já filtra por qualidade, podemos pular a etapa de quality-check, conforme descrito [no próprio protocolo](https://artic.network/ncov-2019/ncov2019-bioinformatics-sop.html).
+
+#### 🧪 ArticMinion
+
+Alinha as reads contra o genoma referência de SARS-CoV-2, baseando-se no esquema de primers usado para o sequenciamento do vírus por amplicons. As reads são alinhadas de acordo com os amplicons esperados, e o pipeline do Artic corrige erros das mesmas, gerando uma sequência FASTA consenso. 
 
 ### 🧪 GetCoverage
 
