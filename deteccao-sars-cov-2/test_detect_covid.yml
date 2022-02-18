@@ -1,14 +1,14 @@
-- name: Teste do workflow para detecção de covid
-  command: miniwdl run -i tests/inputs.json detectar-covid.wdl
-  files:
-    - path: "_LAST/outputs.json"
-      contains:
-        - '.coverage": 0.388'
-        - '.covid_presence": true'
-    - path: "_LAST/out/consensus_fasta/artic_result.consensus.fasta"
-      md5sum: 40ee1a0185e194efb658438920389a04
+# - name: Teste do workflow para detecção de covid
+#   command: miniwdl run -i tests/inputs.json detectar-covid.wdl
+#   files:
+#     - path: "_LAST/outputs.json"
+#       contains:
+#         - '.coverage": 0.388'
+#         - '.covid_presence": true'
+#     - path: "_LAST/out/consensus_fasta/artic_result.consensus.fasta"
+#       md5sum: 40ee1a0185e194efb658438920389a04
 
-- name: Teste da tarefa ArticGuppyplex. Checa se o FASTQ gerado bate com o esperado.
+- name: Teste da tarefa ArticGuppyplex
   command: miniwdl run --task ArticGuppyplex -i tests/guppyplex.inputs.json detectar-covid.wdl
   files:
     - path: "_LAST/out/fastq/guppyplexed.fastq.gz"
@@ -22,13 +22,13 @@
         - "@0691aa9b-b6bc-4ca4-a120-f27aec354a9c"
         - "@14fa94ad-3e91-4fe9-9f6b-d8867c9509af"
 
-- name: Teste da tarefa ArticMinion. Checa se o consensus.FASTA gerado bate com o esperado.
+- name: Teste da tarefa ArticMinion
   command: miniwdl run --task ArticMinion -i tests/minion.inputs.json detectar-covid.wdl
   files:
     - path: "_LAST/out/consensus_fasta/artic_result.consensus.fasta"
       md5sum: 40ee1a0185e194efb658438920389a04
 
-- name: Teste da tarefa GetCoverage. Checa se o consensus.FASTA gerado bate com o esperado.
+- name: Teste da tarefa GetCoverage
   command: miniwdl run --task GetCoverage -i tests/getcoverage.inputs.json detectar-covid.wdl
   files:
     - path: "_LAST/outputs.json"
