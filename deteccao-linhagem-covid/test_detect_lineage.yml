@@ -9,7 +9,7 @@
       contains:
         - 'BS002303.1_Severe_acute_respiratory_syndrome_coronavirus_2_hCoV-19/Japan/SZ-NIG-4-C67/2022_RNA__complete_genome,BA.2,0.0,1.0,Omicron (BA.2-like),0.984600,0.015400,PLEARN-v1.2.123,3.1.20,2022-01-20,v1.2.123,passed_qc,scorpio call: Alt alleles 64; Ref alleles 1; Amb alleles 0; Oth alleles 0'
 
-- name: Teste da tarefa Pangolin. Checa se a predição de linhagem obtida bate com o esperado.
+- name: Teste da tarefa Pangolin
   command: miniwdl run --task Pangolin -i tests/pangolin.inputs.json detectar-linhagem.wdl
   files:
     - path: "_LAST/outputs.json"
