@@ -13,7 +13,8 @@ commands:
       - run:
           name: Prepare miniwdl artifacts
           command: |
-            mkdir ~/workdir
+            set -x ;
+            mkdir ~/workdir ;
             for i in ~/pytest-workdir/*/_LAST/*.txt ~/pytest-workdir/*/_LAST/*.log ~/pytest-workdir/*/_LAST/command ~/pytest-workdir/*/log.err;  do
               directory="$(echo $i | cut -d "/" -f 5)";
               if [[ "${directory}" != "*" ]] ;
