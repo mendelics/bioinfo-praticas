@@ -16,7 +16,7 @@ workflow DetectLineage {
     }
 }
 
-task RunPangolinOnSample {
+task Pangolin {
     input {
         File fasta
     }
