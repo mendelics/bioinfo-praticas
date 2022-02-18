@@ -33,7 +33,7 @@ Para completar esta prática você precisará apenas de uma conta no GitHub. Um 
 
 ### 🔧 Organização de workflow
 
-Optamos por usar a linguagem WDL ([pronunciada widdle](https://support.terra.bio/hc/en-us/articles/360037117492-Overview-Getting-started-with-WDL)). Para processos simples ou operações apenas exploratórias pode ser questionável a adoção de uma linguagem para organizar workflows, pois adiciona complexidade. No entanto a complexidade se paga quando temos uma linha de produção, como na Mendelics onde centenas de exomas são processados semanalmente, pois:
+Optamos por usar a linguagem WDL ([pronunciada widdle](https://support.terra.bio/hc/en-us/articles/360037117492-Overview-Getting-started-with-WDL)). Para processos simples ou operações apenas exploratórias pode ser questionável a adoção de uma linguagem para organizar workflows, pois adiciona complexidade. No entanto a complexidade se paga quando temos uma linha de produção, como na Mendelics onde centenas de exomas são processados semanalmente. Entre os ganhos podemos citar:
 
 - As etapas ficam bem definidas, podendo ser reaproveitadas. Muitas vezes podemos até mesmo usar algumas das disponibilizadas pelo [Broad Institute via projeto WARP](https://broadinstitute.github.io/warp/).
 
@@ -69,3 +69,8 @@ Vale a pena dedicarmos um tempo elaborando testes automáticos para as principai
 É relativamente comum que novas versões de software sejam manualmente disponibilizadas após uma série de mudanças feitas pelos desenvolvedores, que podem ser reorganizações de código ou novos recursos. O processo de integração contínua é um sistema onde uma vez que a mudança para o software é proposta ela será avaliada por uma série de testes automáticos, como os desta prática, pode ser revisada por um colega humano e, se tudo for aprovado, entrará em sua linha de produção automaticamente.
 
 Usamos o CircleCI, que oferece uma cota gratuita para projetos publicos. [Neste link](colocar link) você pode conferir a interface que a plataforma oferece. Existem outros que também são bons, como o [Travis](https://www.travis-ci.com/).
+
+
+### Links
+
+[Dicas para desenvolvimento](https://github.com/mendelics/lbb-mendelics-2021/blob/main/dicas-desenvolvimento.md): Material preparado por nós para a competição organizada pela Liga Brasileira de Bioinformatica. Discorre sobre os mesmos assuntos dessa prática, com algumas curiosidades e exemplos a diferentes.
