@@ -12,7 +12,9 @@ workflow DetectLineage {
     }
 
     output {
-
+        File pangolin_result_csv = Pangolin.pangolin_result_csv
+        String pangolin_version = Pangolin.pangolin_version
+        String pangoLEARN_version = Pangolin.pangoLEARN_version
     }
 }
 
