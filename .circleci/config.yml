@@ -5,6 +5,22 @@ orbs:
   python: circleci/python@2.0.1
 
 
+commands:
+
+  copy-miniwdl-artifacts:
+    description: Organiza os arquivos de log gerados pelo pytest-workflow
+    steps:
+      - run:
+          name: Prepare miniwdl artifacts
+          command: |
+            mkdir ~/workdir
+            for i in ~/pytest-workdir/*/_LAST/*.txt ~/pytest-workdir/*/_LAST/*.log ~/pytest-workdir/*/_LAST/command; do 
+              directory=$(echo $i | cut -d "/" -f 5);
+              mkdir -p ~/workdir/$directory; 
+              cp $i ~/workdir/$directory; 
+            done
+
+
 jobs:
   predicao-de-sexo:
 
@@ -21,11 +37,14 @@ jobs:
       - run:
           name: Run tests
           working_directory: predicao-de-sexo
-          command: pytest --junitxml=test-results/junit.xml 
+          command: pytest --keep-workflow-wd --basetemp ~/pytest-workdir/ --junitxml=test-results/junit.xml
+      - copy-miniwdl-artifacts
       - store_test_results:
           path: predicao-de-sexo/test-results
       - store_artifacts:
           path: predicao-de-sexo/test-results
+      - store_artifacts:
+          path: ~/workdir
 
   deteccao-sars-cov-2:
     machine:
@@ -41,12 +60,14 @@ jobs:
       - run:
           name: Run tests deteccao-sars-cov-2
           working_directory: deteccao-sars-cov-2
-          command: pytest --junitxml=test-results/junit.xml 
+          command: pytest --keep-workflow-wd --basetemp ~/pytest-workdir/ --junitxml=test-results/junit.xml
+      - copy-miniwdl-artifacts
       - store_test_results:
           path: deteccao-sars-cov-2/test-results
       - store_artifacts:
           path: deteccao-sars-cov-2/test-results
-
+      - store_artifacts:
+          path: ~/workdir
 
 workflows:
   testes-de-workflows:
