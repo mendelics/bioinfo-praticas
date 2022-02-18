@@ -56,7 +56,8 @@ task CountVariants {
     # como inputs da task usamos a notação "~{nome_do_input}". Documentação completa em
     # https://github.com/openwdl/wdl/blob/main/versions/1.1/SPEC.md#an-example-wdl-workflow
     command <<<
-        set -eux
+        set -e  # Importante para que o script pare no primeiro erro que ocorrer.
+
         # A sintaxe ~{sep=" " vcf_files} é de WDL, ela expande o array
         # em uma string separada por espaço. Ex: "item1 item2 item3".
         # De resto, isto é apenas um for-loop em bash.
@@ -102,7 +103,7 @@ task CalculateCoverages {
         echo -e "~{interval}" >> interval.bed
         for bam in ~{sep=" " bam_files}; do
             name=$(basename $bam .bam)
-            mosdepth --chrom chrY --no-per-base --thresholds 10,20,30,40 --by interval.bed $name.output $bam
+            mosdepth --chrom chrY --no-per-base --parametro-que-nao-existe --thresholds 10,20,30,40 --by interval.bed $name.output $bam
             data=$(zcat $name.output.thresholds.bed.gz | grep SRY)
             echo -e "$name\t$data" >> coverages.txt
         done

@@ -19,6 +19,7 @@ commands:
               mkdir -p ~/workdir/$directory; 
               cp $i ~/workdir/$directory; 
             done
+          when: always
 
 
 jobs:
@@ -95,5 +96,5 @@ workflows:
   testes-de-workflows:
     jobs:
       - predicao-de-sexo
-      - deteccao-sars-cov-2
-      - deteccao-linhagem-covid
+      # - deteccao-sars-cov-2
+      # - deteccao-linhagem-covid
