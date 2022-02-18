@@ -41,7 +41,7 @@ Optamos por usar a linguagem WDL ([pronunciada widdle](https://support.terra.bio
 
 ### 🔧 Github
 
-Github é esta plataforma onde você está lendo este texto. Dedique um tempo em se familiarizar com ela. Repositório é o local em que se encontram todos os arquivos referentes a um projeto dentro do Github para um usuário. Como por exemplo, aqui o repositório é bioinfo-praticas, dentro do usuário mendelics. Note que logo abaixo do nome do repositório existem algumas abas com "code", "issues", "pull requests", etc. Esses são alguns dos conteúdos disponíveis na plataforma.
+Github é esta plataforma onde você está lendo este texto. Dedique um tempo em se familiarizar com ela. Repositório é o local em que se encontram todos os arquivos referentes a um projeto dentro do Github para uma conta. Como por exemplo, aqui o repositório é bioinfo-praticas, dentro da conta mendelics. Note que logo abaixo do nome do repositório existem algumas abas com "code", "issues", "pull requests", etc. Esses são alguns dos conteúdos disponíveis na plataforma.
 
 ![image](https://user-images.githubusercontent.com/12699242/154550821-7584f54e-69d1-432e-bcf0-31516087eb36.png)
 
