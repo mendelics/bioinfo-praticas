@@ -48,8 +48,8 @@ jobs:
           path: deteccao-sars-cov-2/test-results
 
 
-# workflows:
-#   testes-de-workflows:
-#     jobs:
-#       - predicao-de-sexo
-#       - deteccao-sars-cov-2
+workflows:
+  testes-de-workflows:
+    jobs:
+      - predicao-de-sexo
+      - deteccao-sars-cov-2
