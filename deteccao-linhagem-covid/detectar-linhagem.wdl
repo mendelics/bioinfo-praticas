@@ -28,7 +28,7 @@ task RunPangolinOnSample {
         pangolin -pv > pangoLEARN_version.txt
 
         pangolin \
-            ~{sample_fasta} \
+            ~{fasta} \
             --outfile pangolin.lineage.csv
     >>>
 
