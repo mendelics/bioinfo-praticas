@@ -8,7 +8,7 @@ workflow DetectLineage {
 
     call Pangolin {
         input:
-            fasta=consensus_fasta
+            consensus_fasta=consensus_fasta
     }
 
     output {
