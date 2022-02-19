@@ -9,6 +9,7 @@ Neste repositório organizamos práticas para experimentarmos diversas ferrament
   - [Organização de workflow](#-organização-de-workflow)
   - [Testes automáticos](#-testes-automáticos)
   - [Integração continua](#-integração-continua)
+- [Trabalhe conosco](#-trabalhe-conosco)
 
 
 ## Práticas
@@ -71,6 +72,9 @@ Vale a pena dedicarmos um tempo elaborando testes automáticos para as principai
 
 Usamos o CircleCI, que oferece uma cota gratuita para projetos publicos. [Neste link](colocar link) você pode conferir a interface que a plataforma oferece. Existem outros que também são bons, como o [Travis](https://www.travis-ci.com/).
 
+## 💼 Trabalhe conosco
+
+Envie um email para [bgyhbw7jh@mozmail.com](bgyhbw7jh@mozmail.com) com seu curriculo anexado. Entraremos em contato caso tenhamos uma vaga disponível para a área de bioinformática e desenvolvimento.
 
 ### Links
 
