@@ -52,7 +52,7 @@ task ArticGuppyplex {
         artic guppyplex \
             --skip-quality-check \
             --min-length ~{min_read_length} \
-            ~{max_read_length} \
+            --max-length ~{max_read_length} \
             --directory fastqs \
             --output "guppyplexed.fastq"
 
