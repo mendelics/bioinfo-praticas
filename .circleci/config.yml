@@ -23,6 +23,7 @@ commands:
                 cp $i ~/workdir/$directory;
               fi
             done
+          when: always
 
 
 jobs:

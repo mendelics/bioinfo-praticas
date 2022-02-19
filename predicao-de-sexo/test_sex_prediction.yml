@@ -1,19 +1,3 @@
-- name: Teste do workflow para predição de sexo.
-  command: miniwdl run -i tests/inputs.json predicao-de-sexo.wdl
-  files:
-    - path: "_LAST/out/predictions/stdout.txt"
-      contains:
-        - "CXT070-001.sry\tmale"
-        - "KAB133-001.sry\tmale"
-        - "NQB080-001.sry\tmale"
-        - "OZX502-001.sry\tfemale"
-        - "UQE098-001.sry\tfemale"
-        - "CXT070-001\tmale"
-        - "KAB133-001\tmale"
-        - "NQB080-001\tmale"
-        - "OZX502-001\tfemale"
-        - "UQE098-001\tfemale"
-
 - name: Teste da tarefa CountVariants. Conta het. e hom. no cromossomo X da amostra.
   command: miniwdl run --task CountVariants -i tests/count-variants.inputs.json predicao-de-sexo.wdl
   files:
@@ -35,3 +19,19 @@
         - "NQB080-001.sry\tchrY\t2786854\t2787741\tSRY\t747\t709\t678\t649"
         - "OZX502-001.sry\tchrY\t2786854\t2787741\tSRY\t0\t0\t0\t0"
         - "UQE098-001.sry\tchrY\t2786854\t2787741\tSRY\t0\t0\t0\t0"
+
+- name: Teste do workflow para predição de sexo.
+  command: miniwdl run -i tests/inputs.json predicao-de-sexo.wdl
+  files:
+    - path: "_LAST/out/predictions/stdout.txt"
+      contains:
+        - "CXT070-001.sry\tmale"
+        - "KAB133-001.sry\tmale"
+        - "NQB080-001.sry\tmale"
+        - "OZX502-001.sry\tfemale"
+        - "UQE098-001.sry\tfemale"
+        - "CXT070-001\tmale"
+        - "KAB133-001\tmale"
+        - "NQB080-001\tmale"
+        - "OZX502-001\tfemale"
+        - "UQE098-001\tfemale"
