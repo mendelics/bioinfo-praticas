@@ -96,5 +96,5 @@ workflows:
   testes-de-workflows:
     jobs:
       - predicao-de-sexo
-      # - deteccao-sars-cov-2
-      # - deteccao-linhagem-covid
+      - deteccao-sars-cov-2
+      - deteccao-linhagem-covid
