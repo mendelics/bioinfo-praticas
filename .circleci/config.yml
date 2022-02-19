@@ -19,6 +19,7 @@ commands:
               mkdir -p ~/workdir/$directory; 
               cp $i ~/workdir/$directory; 
             done
+          when: always
 
 
 jobs:
