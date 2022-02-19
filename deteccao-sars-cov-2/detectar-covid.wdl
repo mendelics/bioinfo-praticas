@@ -127,7 +127,7 @@ task GetCoverage {
         coverage = 1 - n_percentage
         round_coverage = round(coverage, 3)
         with open("coverage.float", "w") as out:
-            out.write(round_coverage)
+            out.write(str(round_coverage))
 
         if round_coverage >= ~{coverage_threshold}:
             covid_presence = True
