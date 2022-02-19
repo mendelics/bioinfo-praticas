@@ -16,6 +16,7 @@ Neste repositório organizamos práticas para experimentarmos diversas ferrament
 Preparamos dois workflows - visando serem didáticos - com parte das tarefas que executamos rotineiramente na empresa. 
 
 - [_deteccao-sars-cov-2_](deteccao-sars-cov-2/): utiliza dados de sequenciamento nanopore. Resumidamente, este workflow alinha as leituras contra o genoma referência do sars-cov-2 para montar uma sequencia consenso.
+- [deteccao-linhagem-covid](deteccao-linhagem-covid/): Classifica montagens de genomas virais em suas respectivas linhagens. Ex: BA.1, BA.2, etc.
 - [_predicao-de-sexo_](predicao-de-sexo/): realiza a predição do sexo biológico de duas formas: 1) porcentagem de sitios heterozigotos no cromossomo X e 2) presença de leituras sobre a região SRY do cromossomo Y.
 
 ## 🧰 Ferramentas
