@@ -82,7 +82,7 @@ task ArticMinion {
     command <<<
         set -eux
 
-        tar -x ~{primer_schemes_compressed}
+        tar -xzf ~{primer_schemes_compressed}
 
         artic minion \
             --medaka \
