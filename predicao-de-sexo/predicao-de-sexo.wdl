@@ -103,7 +103,7 @@ task CalculateCoverages {
         echo -e "~{interval}" >> interval.bed
         for bam in ~{sep=" " bam_files}; do
             name=$(basename $bam .bam)
-            mosdepth --chrom chrY --no-per-base --parametro-que-nao-existe --thresholds 10,20,30,40 --by interval.bed $name.output $bam
+            mosdepth --chrom chrY --no-per-base --thresholds 10,20,30,40 --by interval.bed $name.output $bam
             data=$(zcat $name.output.thresholds.bed.gz | grep SRY)
             echo -e "$name\t$data" >> coverages.txt
         done
