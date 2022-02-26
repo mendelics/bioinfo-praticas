@@ -52,7 +52,7 @@ task ArticGuppyplex {
         artic guppyplex \
             --skip-quality-check \
             --min-length ~{min_read_length} \
-            ~{max_read_length} \
+            --max-length ~{max_read_length} \
             --directory fastqs \
             --output "guppyplexed.fastq"
 
@@ -82,7 +82,7 @@ task ArticMinion {
     command <<<
         set -eux
 
-        tar -x ~{primer_schemes_compressed}
+        tar -xzf ~{primer_schemes_compressed}
 
         artic minion \
             --medaka \
@@ -127,7 +127,7 @@ task GetCoverage {
         coverage = 1 - n_percentage
         round_coverage = round(coverage, 3)
         with open("coverage.float", "w") as out:
-            out.write(round_coverage)
+            out.write(str(round_coverage))
 
         if round_coverage >= ~{coverage_threshold}:
             covid_presence = True

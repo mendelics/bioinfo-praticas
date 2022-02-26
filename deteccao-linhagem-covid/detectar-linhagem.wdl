@@ -29,7 +29,7 @@ task Pangolin {
         pangolin -v > pangolin_version.txt
         pangolin -pv > pangoLEARN_version.txt
 
-        pangolin
+        pangolin \
             ~{fasta} \
             --outfile pangolin.lineage.csv
     >>>
