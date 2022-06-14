@@ -34,7 +34,7 @@ conda install -c bioconda bcftools
 docker run -it --rm -v $(pwd):/work -w /work quay.io/biocontainers/bcftools:1.14--hde04aa1_1 bash
 ```
 
-No workflow desta prática ele é usado [aqui](https://github.com/lmtani/agua-triste/blob/4fe26e34ad364cb36da36eb910ff3b58416a6886/2-predicao-de-sexo/predicao-de-sexo.wdl#L67-L68).
+No workflow desta prática ele é usado [aqui](https://github.com/mendelics/bioinfo-praticas/blob/d361f879c37de2c913dfeda57a4668ef8cfb651a/predicao-de-sexo/predicao-de-sexo.wdl#L68-L69).
 
 ### 🧪 CalculateCoverages
 
@@ -42,11 +42,11 @@ Utiliza a ferramenta _mosdepth_ para verificar a cobertura horizontal sobre a re
 
 Esta ferramenta também está disponível para instalação via conda ou pelo próprio [repositório oficial](https://github.com/brentp/mosdepth), basta baixar o binário para o caso de usar linux.
 
-No workflow desta prática ele é usado [aqui](https://github.com/lmtani/agua-triste/blob/main/2-predicao-de-sexo/predicao-de-sexo.wdl#L105).
+No workflow desta prática ele é usado [aqui](https://github.com/mendelics/bioinfo-praticas/blob/d361f879c37de2c913dfeda57a4668ef8cfb651a/predicao-de-sexo/predicao-de-sexo.wdl#L106).
 
 ### 🧪 ClassifySex
 
-Carrega os valores calculados nas etapas anteriores para classificar cada uma das amostras como de origem masculina ou feminina. Usamos um pequeno script com Python [aqui](https://github.com/lmtani/agua-triste/blob/main/2-predicao-de-sexo/predicao-de-sexo.wdl#L137-L164).
+Carrega os valores calculados nas etapas anteriores para classificar cada uma das amostras como de origem masculina ou feminina. Usamos um pequeno script com Python [aqui](https://github.com/mendelics/bioinfo-praticas/blob/d361f879c37de2c913dfeda57a4668ef8cfb651a/predicao-de-sexo/predicao-de-sexo.wdl#L138-L165).
 
 É bastante inconveniente trabalhar com script embutido em arquivos WDL pois perdemos todo auxílio que IDEs (como pycharm ou vscode) oferecem. Muitas vezes costumo começar em um arquivo .py e depois apenas copiar para o WDL.
 
