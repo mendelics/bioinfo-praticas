@@ -70,7 +70,7 @@ Vale a pena dedicarmos um tempo elaborando testes automáticos para as principai
 
 É relativamente comum que novas versões de software sejam manualmente disponibilizadas após uma série de mudanças feitas pelos desenvolvedores, que podem ser reorganizações de código ou novos recursos. O processo de integração contínua é um sistema onde uma vez que a mudança para o software é proposta ela será avaliada por uma série de testes automáticos, como os desta prática, pode ser revisada por um colega humano e, se tudo for aprovado, entrará em sua linha de produção. Em suma, a integração automática permite que os testes rodem automaticamente a cada processo de revisão de mudança no software para garantir que não haja erro em nenhum processo importante.
 
-Usamos o CircleCI, que oferece uma cota gratuita para projetos publicos. [Neste link](colocar link) você pode conferir a interface que a plataforma oferece. Existem outros que também são bons, como o [Travis](https://www.travis-ci.com/).
+Usamos o CircleCI, que oferece uma cota gratuita para projetos publicos. [Neste link](https://app.circleci.com/pipelines/github/mendelics/bioinfo-praticas/93/workflows/3bf9c4df-b1dc-4be2-b58f-43a86decfc62/jobs/169) você pode conferir a interface que a plataforma oferece. Existem outros que também são bons, como o [Travis](https://www.travis-ci.com/).
 
 ## 💼 Trabalhe conosco
 
